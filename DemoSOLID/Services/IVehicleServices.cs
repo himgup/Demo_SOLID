@@ -1,7 +1,9 @@
-﻿namespace DemoSOLID.Services
+﻿using DemoSOLID.Models;
+
+namespace DemoSOLID.Services
 {
     public interface IVehicleServices
     {
-        public string GetAllVehicles();
+        public VehicleList GetAllVehicles();
     }
 }

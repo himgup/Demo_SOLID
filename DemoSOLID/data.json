@@ -1,0 +1,21 @@
+{
+    "Vehicles": [
+        {
+            "ID": "1",
+            "ModelName": "Harrier",
+            "VehicleType": "1",
+            "VehicleMode": "1",
+            "EngineDisplacement": "1956",
+            "SeatingCapacity": "5"
+        },
+        {
+            "ID": "2",
+            "ModelName": "Thar",
+            "VehicleType": "1",
+            "VehicleMode": "2",
+            "Engine Displacement": "2000",
+            "SeatingCapacity": "4"
+
+        }
+    ]
+}
