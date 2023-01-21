@@ -1,4 +1,5 @@
 using DemoSOLID.Services;
+using DemoSOLID.DataService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IVehicleServices, VehicleServices>();
+builder.Services.AddScoped<IVehicleDataService, VehicleDataService>();
 
 var app = builder.Build();
 
