@@ -1,67 +1,88 @@
 {
-  "Vehicles": [
+  "Organisations": [
     {
       "ID": "1",
-      "ModelName": "Harrier",
-      "VehicleType": "1",
-      "VehicleMode": "1",
-      "EngineDisplacement": "1956",
-      "SeatingCapacity": "5"
+      "OrgName": "Apple",
+      "Revenue": "200000",
+      "OrgType":  "1",
+      "FoundingYear": "1997",
+      "Country":  "USA"
     },
     {
       "ID": "2",
-      "ModelName": "Thar",
-      "VehicleType": "1",
-      "VehicleMode": "2",
-      "Engine Displacement": "2000",
-      "SeatingCapacity": "4"
+      "OrgName": "Microsoft",
+      "Revenue": "100000",
+      "OrgType": "1",
+      "FoundingYear": "1996",
+      "Country": "USA"
 
     },
     {
       "ID": "3",
-      "ModelName": "KTM Duke",
-      "VehicleType": "2",
-      "VehicleMode": "3",
-      "Engine Displacement": "200",
-      "SeatingCapacity": "2"
+      "OrgName": "IKEA",
+      "Revenue": "150000",
+      "OrgType": "2",
+      "FoundingYear": "1993",
+      "Country": "UAE"
 
     },
     {
       "ID": "4",
-      "ModelName": "F1 Car",
-      "VehicleType": "1",
-      "VehicleMode": "4",
-      "Engine Displacement": "3456",
-      "SeatingCapacity": "1"
+      "OrgName": "H&M",
+      "Revenue": "170000",
+      "OrgType": "3",
+      "FoundingYear": "1999",
+      "Country": "USA"
 
     }
   ],
-  "VehicleType": [
+  "Funds": [
     {
-      "ID": "1",
-      "VehicleType": "Car"
+      "ID": "101",
+      "FundName": "Fund_14",
+      "OrganisationID": "1"
     },
     {
-      "ID": "2",
-      "VehicleType": "Bike"
+      "ID": "105",
+      "FundName": "IPAD_Fund",
+      "OrganisationID": "1"
     },
     {
-      "ID": "3",
-      "VehicleType": "Truck"
+      "ID": "102",
+      "FundName": "Gates_Fund",
+      "OrganisationID": "2"
+    },
+    {
+      "ID": "103",
+      "FundName": "Plane_Fund",
+      "OrganisationID": "3"
+    },
+    {
+      "ID": "104",
+      "FundName": "Design_Fund",
+      "OrganisationID": "4"
     }
   ],
-   "VehicleMode": [
+   "Assets": [
     {
-      "ID": "1",
-      "VehicleMode": "Manual"
+      "ID": "601",
+      "AssetName": "Washington_Office",
+      "FundId": "101"
     },
     {
-      "ID": "2",
-      "VehicleMode": "Semi-Automatic"
+      "ID": "602",
+      "AssetName": "Banglore_Office",
+      "FundId": "102"
     },
     {
-      "ID": "3",
-      "VehicleMode": "Automatic"
+      "ID": "603",
+      "AssetName": "Hydrabad_Branch",
+      "FundId": "103"
+    },
+    {
+      "ID": "604",
+      "AssetName": "Indranagar_Store",
+      "FundId": "104"
     }
   ]
 }

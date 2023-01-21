@@ -11,6 +11,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IVehicleServices, VehicleServices>();
 builder.Services.AddScoped<IVehicleDataService, VehicleDataService>();
+builder.Services.AddScoped<IOrganisationService, OrganisationService>();
+builder.Services.AddScoped<IOrganisationDataService, OrganisationDataService>();
+builder.Services.AddScoped<IFundsDataService, FundsDataService>();
+builder.Services.AddScoped<IFundsService, FundsService>();
+builder.Services.AddScoped<IAssetsDataService, AssetsDataService>();
+builder.Services.AddScoped<IAssetsService, AssetsService>();
 
 var app = builder.Build();
 
