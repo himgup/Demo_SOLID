@@ -1,36 +1,32 @@
-﻿using DemoSOLID.Models;
+﻿using DemoSOLID.DataService;
+using DemoSOLID.Models;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace DemoSOLID.Services
 {
     public class VehicleServices : IVehicleServices
     {
         private readonly IWebHostEnvironment _hostingEnvironment;
+        private readonly IVehicleDataService _vehicleDataService;
 
-        public VehicleServices(IWebHostEnvironment hostingEnvironment)
-    {
-        _hostingEnvironment = hostingEnvironment;
-    }
+        public VehicleServices(IWebHostEnvironment hostingEnvironment, IVehicleDataService vehicleDataService)
+        {
+            _hostingEnvironment = hostingEnvironment;
+            _vehicleDataService = vehicleDataService;
+        }
         public VehicleList GetAllVehicles()
         {
-            var rootPath = _hostingEnvironment.ContentRootPath; 
-
-            var fullPath = Path.Combine(rootPath, "data.json"); 
-
-            var jsonData = System.IO.File.ReadAllText(fullPath);
-
-            if (string.IsNullOrWhiteSpace(jsonData)) 
-                
-            return null; //if no data is present then return null or error if you wish
-
-            var res = JsonConvert.DeserializeObject<VehicleList>(jsonData);
+            var res = _vehicleDataService.GetAllVehicles();
 
             return res;
         }
 
-        public string GetFourWheelers()
+        public List<Vehicle> GetFourWheelers()
         {
-            return "All Vehicles";
+            var res = _vehicleDataService.GetAllVehicles();
+            var finalRes = res?.Vehicles?.Where(Vehicle => Vehicle.VehicleType == 1).ToList();
+            return finalRes;
         }
 
         public string GetFileterdVehicles()
@@ -38,5 +34,12 @@ namespace DemoSOLID.Services
             return "All Vehicles";
         }
 
+        public Vehicle GetVehicleById(int id)
+        {
+            var res = _vehicleDataService.GetAllVehicles();
+            var finalRes = res?.Vehicles?.Where(Vehicle => Vehicle.ID == id).FirstOrDefault();
+            return finalRes;
+
+        }
     }
 }

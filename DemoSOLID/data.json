@@ -8,14 +8,32 @@
             "EngineDisplacement": "1956",
             "SeatingCapacity": "5"
         },
-        {
-            "ID": "2",
-            "ModelName": "Thar",
-            "VehicleType": "1",
-            "VehicleMode": "2",
-            "Engine Displacement": "2000",
-            "SeatingCapacity": "4"
+      {
+        "ID": "2",
+        "ModelName": "Thar",
+        "VehicleType": "1",
+        "VehicleMode": "2",
+        "Engine Displacement": "2000",
+        "SeatingCapacity": "4"
 
-        }
+      },
+      {
+        "ID": "3",
+        "ModelName": "KTM Duke",
+        "VehicleType": "2",
+        "VehicleMode": "3",
+        "Engine Displacement": "200",
+        "SeatingCapacity": "2"
+
+      },
+      {
+        "ID": "4",
+        "ModelName": "F1 Car",
+        "VehicleType": "1",
+        "VehicleMode": "4",
+        "Engine Displacement": "3456",
+        "SeatingCapacity": "1"
+
+      }
     ]
 }

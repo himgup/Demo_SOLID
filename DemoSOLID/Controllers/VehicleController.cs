@@ -30,9 +30,18 @@ namespace DemoSOLID.Controllers
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            return Ok(_vehicleServices.GetVehicleById(id));
+        }
+        
+        //Get 
+        [HttpGet]
+        [Route("FourWheelers")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(VehicleList))]
+        public IActionResult GetfourWheelers()
+        {
+            return Ok(_vehicleServices.GetFourWheelers());
         }
 
     }
