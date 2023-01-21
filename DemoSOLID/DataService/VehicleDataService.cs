@@ -16,6 +16,7 @@ namespace DemoSOLID.DataService
 
             var fullPath = Path.Combine(rootPath, "data.json");
 
+
             var jsonData = System.IO.File.ReadAllText(fullPath);
 
             if (string.IsNullOrWhiteSpace(jsonData))
