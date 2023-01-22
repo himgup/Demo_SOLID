@@ -19,5 +19,13 @@ namespace DemoSOLID.Services
 
             return res;
         }
+
+        public Assets GetAssetById(int id)
+        {
+
+            var assetList = _assetDataService.GetAllAssets();
+            var res = assetList?.Assets?.Where(asset => asset.ID == id).FirstOrDefault();
+            return res;
+        }
     }
 }

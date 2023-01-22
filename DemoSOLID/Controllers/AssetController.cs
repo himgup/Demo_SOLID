@@ -20,5 +20,11 @@ namespace DemoSOLID.Controllers
         {
             return Ok(_assetService.GetAllAssets());
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetAssetById(int id)
+        {
+            return Ok(_assetService.GetAssetById(id));
+        }
     }
 }
