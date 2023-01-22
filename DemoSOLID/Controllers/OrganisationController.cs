@@ -42,6 +42,12 @@ namespace DemoSOLID.Controllers
         {
             return Ok(_organisationService.GetOrganisationDetails(id));
         }
+        [HttpGet]
+        [Route("Revenue")]
+        public IActionResult GetCompaniesByRevnue()
+        {
+            return Ok(_organisationService.GetCompaniesByRevnue());
+        }
 
     }
 }

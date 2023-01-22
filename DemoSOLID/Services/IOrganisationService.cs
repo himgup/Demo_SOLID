@@ -9,5 +9,6 @@ namespace DemoSOLID.Services
         public List<Organisations> GetTechCompanies();
         public Organisations GetOrganisationById(int id);
         public OgranisationDetailViewModel GetOrganisationDetails(int id);
+        public List<Organisations> GetCompaniesByRevnue();
     }
 }

@@ -15,6 +15,14 @@ namespace DemoSOLID.DataService
 
             return result;
         }
+        public List<Assets> GetAllAssetsAsList()
+        {
+            var jsonData = ReadJson.ReadJsonFile();
+
+            var result = JsonConvert.DeserializeObject<AssetList>(jsonData).Assets.ToList();
+
+            return result;
+        }
 
         public IQueryable<Assets> GetAllAssetsbyOData()
         {
