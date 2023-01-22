@@ -5,12 +5,10 @@ namespace DemoSOLID.Services
 {
     public class FundsService : IFundsService
     {
-        private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly IFundsDataService _fundsDataService;
 
-        public FundsService(IWebHostEnvironment hostingEnvironment, IFundsDataService fundsDataService)
+        public FundsService( IFundsDataService fundsDataService)
         {
-            _hostingEnvironment = hostingEnvironment;
             _fundsDataService = fundsDataService;
         }
         public FundList GetAllFunds()

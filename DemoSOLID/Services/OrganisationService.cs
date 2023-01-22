@@ -6,14 +6,12 @@ namespace DemoSOLID.Services
 {
     public class OrganisationService : IOrganisationService
     {
-        private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly IOrganisationDataService _organisationDataService;
         private readonly IFundsDataService _fundsDataService;
         private readonly IAssetsDataService _assetDataService;
         private readonly IAssetsService _assetService;
-        public OrganisationService(IWebHostEnvironment hostingEnvironment, IOrganisationDataService organisationDataService, IFundsDataService fundsDataService, IAssetsDataService assetDataService, IAssetsService assetService)
+        public OrganisationService( IOrganisationDataService organisationDataService, IFundsDataService fundsDataService, IAssetsDataService assetDataService, IAssetsService assetService)
         {
-            _hostingEnvironment = hostingEnvironment;
             _organisationDataService = organisationDataService;
             _fundsDataService = fundsDataService;
             _assetDataService = assetDataService;

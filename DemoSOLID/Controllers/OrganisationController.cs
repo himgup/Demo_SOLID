@@ -30,7 +30,6 @@ namespace DemoSOLID.Controllers
         //Get 
         [HttpGet]
         [Route("TechCompanies")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(VehicleList))]
         public IActionResult GetTechCompanies()
         {
             return Ok(_organisationService.GetTechCompanies());
