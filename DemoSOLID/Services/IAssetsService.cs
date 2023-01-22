@@ -6,5 +6,7 @@ namespace DemoSOLID.Services
     {
         public AssetList GetAllAssets();
         public Assets GetAssetById(int id);
+        public IQueryable<Assets> GetAllAssetsbyOData();
+
     }
 }
