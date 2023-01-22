@@ -20,5 +20,10 @@ namespace DemoSOLID.Controllers
         {
             return Ok(_fundService.GetAllFunds());
         }
+        [HttpGet("{id}")]
+        public IActionResult GetFundById(int id)
+        {
+            return Ok(_fundService.GetFundById(id));
+        }
     }
 }

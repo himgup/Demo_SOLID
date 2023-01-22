@@ -19,5 +19,12 @@ namespace DemoSOLID.Services
 
             return res;
         }
+
+        public Funds GetFundById(int id)
+        {
+            var fundList = _fundsDataService.GetAllFunds();
+            var res = fundList?.Funds?.Where(fund => fund.ID == id).FirstOrDefault();
+            return res;
+        }
     }
 }
