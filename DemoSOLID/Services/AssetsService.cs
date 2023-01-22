@@ -25,5 +25,12 @@ namespace DemoSOLID.Services
             var res = assetList?.Assets?.Where(asset => asset.ID == id).FirstOrDefault();
             return res;
         }
+
+        public IQueryable<Assets> GetAllAssetsbyOData()
+        {
+            var res = _assetDataService.GetAllAssetsbyOData();
+
+            return res;
+        }
     }
 }

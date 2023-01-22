@@ -1,11 +1,13 @@
 using DemoSOLID.Services;
 using DemoSOLID.DataService;
+using Microsoft.AspNetCore.OData;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddOData(options =>
+options.Count().Filter().OrderBy().Expand().Select().SetMaxTop(null));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

@@ -1,6 +1,7 @@
 ﻿using DemoSOLID.Models;
 using DemoSOLID.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 
 namespace DemoSOLID.Controllers
 {
@@ -25,6 +26,15 @@ namespace DemoSOLID.Controllers
         public IActionResult GetAssetById(int id)
         {
             return Ok(_assetService.GetAssetById(id));
+        }
+
+        [HttpGet]
+        [Route("Odata")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Assets))]
+        [EnableQuery]
+        public IActionResult GetAll()
+        {
+            return Ok(_assetService.GetAllAssetsbyOData());
         }
     }
 }
