@@ -14,5 +14,14 @@ namespace DemoSOLID.DataService
 
             return result;
         }
+
+        public IQueryable<Organisations> GetAllOrganisationsbyOdata()
+        {
+            var jsonData = ReadJson.ReadJsonFile();
+
+            var result = JsonConvert.DeserializeObject<OrganisationList>(jsonData).Organisations.AsQueryable();
+
+            return result;
+        }
     }
 }

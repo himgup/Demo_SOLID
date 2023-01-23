@@ -2,6 +2,8 @@
 using DemoSOLID.Services;
 using DemoSOLID.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
+
 
 namespace DemoSOLID.Controllers
 {
@@ -47,6 +49,16 @@ namespace DemoSOLID.Controllers
         public IActionResult GetCompaniesByRevnue()
         {
             return Ok(_organisationService.GetCompaniesByRevnue());
+        }
+
+
+        [EnableQuery]
+        [HttpGet]
+        [Route("Odata")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OrganisationList))]
+        public IActionResult GetAll()
+        {
+            return Ok(_organisationService.GetAllOrganisationsbyOData());
         }
 
     }

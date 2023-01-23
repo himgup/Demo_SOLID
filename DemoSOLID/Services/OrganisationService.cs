@@ -75,5 +75,12 @@ namespace DemoSOLID.Services
                 .ToList();
             return res;
         }
+
+        public IQueryable<Organisations> GetAllOrganisationsbyOData()
+        {
+            var res = _organisationDataService.GetAllOrganisationsbyOdata();
+
+            return res;
+        }
     }
 }
