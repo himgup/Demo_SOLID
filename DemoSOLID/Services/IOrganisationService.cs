@@ -10,5 +10,8 @@ namespace DemoSOLID.Services
         public Organisations GetOrganisationById(int id);
         public OgranisationDetailViewModel GetOrganisationDetails(int id);
         public List<Organisations> GetCompaniesByRevnue();
+        public IQueryable<Organisations> GetAllOrganisationsbyOData();
+
+
     }
 }
