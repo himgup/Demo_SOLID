@@ -32,5 +32,12 @@ namespace DemoSOLID.Services
 
             return res;
         }
+        public List<IGrouping<int,Assets>> GetAssetsByFunds()
+        {
+            var assetList = _assetDataService.GetAllAssets();
+            var res = assetList?.Assets?.GroupBy(asset=> asset.FundId).ToList();
+
+            return res;
+        }
     }
 }

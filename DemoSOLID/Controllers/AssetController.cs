@@ -36,5 +36,13 @@ namespace DemoSOLID.Controllers
         {
             return Ok(_assetService.GetAllAssetsbyOData());
         }
+
+        [HttpGet]
+        [Route("groupedAssets")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AssetList))]
+        public IActionResult GetAssetsByFunds()
+        {
+            return Ok(_assetService.GetAssetsByFunds());
+        }
     }
 }

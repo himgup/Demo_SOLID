@@ -36,14 +36,17 @@ namespace DemoSOLID.Services
         {
             var organisation = _organisationDataService?.GetAllOrganisations()?.Organisations?.Where(organisation => organisation.ID == id).FirstOrDefault();
             var funds = _fundsDataService.GetAllFunds()?.Funds?.Where(fund=>fund.OrganisationID==id).ToList();
-            var allAssets = _assetDataService.GetAllAssets();
-            var assets = new List<Assets>();
-            foreach(var fund in funds)
-            {
-                var asset = allAssets?.Assets?.Where(asset => asset.FundId == fund.ID)?.FirstOrDefault();
-                if(asset != null)
-                    assets.Add(asset);
-            }
+            var allAssets = _assetDataService.GetAllAssetsAsList();
+            var assets = allAssets.Join(
+                funds,
+                asset => asset.FundId,
+                fund => fund.ID,
+                (asset, fund) => new Assets
+                {
+                    AssetName = asset.AssetName,
+                    FundId = asset.FundId,
+                    ID = asset.ID
+                }).ToList();
 
             OgranisationDetailViewModel res = new OgranisationDetailViewModel
             {
@@ -59,6 +62,17 @@ namespace DemoSOLID.Services
         {
             var organisationList = _organisationDataService.GetAllOrganisations();
             var res = organisationList?.Organisations?.Where(organisation => organisation.OrgType == 1).ToList();
+            return res;
+        }
+
+        public List<Organisations> GetCompaniesByRevnue()
+        {
+            var organisationList = _organisationDataService.GetAllOrganisations();
+            var res = organisationList?.Organisations?
+                .Take(3)
+                .OrderByDescending(Organisation => Organisation.Revenue)
+                .ThenBy(organisation => organisation.OrgName)
+                .ToList();
             return res;
         }
     }

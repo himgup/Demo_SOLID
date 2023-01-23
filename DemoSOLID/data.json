@@ -63,7 +63,7 @@
       "OrganisationID": "4"
     }
   ],
-   "Assets": [
+  "Assets": [
     {
       "ID": "601",
       "AssetName": "Washington_Office",
@@ -83,6 +83,11 @@
       "ID": "604",
       "AssetName": "Indranagar_Store",
       "FundId": "104"
+    },
+    {
+      "ID": "605",
+      "AssetName": "NewYork_Office",
+      "FundId": "101"
     }
   ]
 }
